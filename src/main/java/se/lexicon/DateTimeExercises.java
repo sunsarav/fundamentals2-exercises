@@ -1,10 +1,9 @@
 package se.lexicon;
-import javax.crypto.spec.HKDFParameterSpec;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 public class DateTimeExercises {
-    static void main(String[] args) {
+    static void main() {
 
     //Exercise 1 – Current Date
 
@@ -22,7 +21,7 @@ public class DateTimeExercises {
         LocalDate specificDate = LocalDate.of(2026,2,23);
         for (int i = 0; i < 7; i ++) {
         LocalDate followingDay = specificDate.plusDays(i);
-        System.out.println(followingDay);
+        System.out.println("Entire week: " + followingDay);
         }
 
     //Exercise 4 – Parse Date from String
@@ -67,14 +66,13 @@ public class DateTimeExercises {
     //Exercise 11 – Parse Time from String
 
         String timeString = "14:30:45";
-        LocalTime parsedTime = LocalTime.parse(timeString);
         System.out.println("Parsed Time: " +timeString);
 
     //Exercise 12 – Formatted Current Time
 
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("HH:mm:ss");
         String formattedTime = time.format(formatter1);
-        System.out.println(formattedTime);
+        System.out.println("Formatted Current Time: " + formattedTime);
 
     //Exercise 13 – Specific LocalDateTime
 
@@ -87,12 +85,23 @@ public class DateTimeExercises {
 
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("eeee dd MMMM HH:mm");
         String formattedDateTime = thisDateTime.format(formatter2);
-        System.out.println(formattedDateTime);
+        System.out.println("Formatted LocalDateTime: " + formattedDateTime);
 
     //Exercise 15 – Combine Date and Time
 
         LocalDateTime combined = LocalDateTime.of(thisDate, thisTime);
         System.out.println("Combined Date and Time: " + combined);
+
+    //Exercise 16 - Extract Components from LocalDateTime
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        LocalDate localDate = localDateTime.toLocalDate();
+        LocalTime localTime = localDateTime.toLocalTime();
+        System.out.println("Local Date and Time: " + localDateTime);
+        System.out.println("Just Date: " + localDate);
+        System.out.println("Just Time: " + localTime);
+
+
 
 
 
