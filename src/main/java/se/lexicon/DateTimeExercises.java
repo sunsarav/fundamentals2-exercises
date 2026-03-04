@@ -66,6 +66,34 @@ public class DateTimeExercises {
 
     //Exercise 11 – Parse Time from String
 
+        String timeString = "14:30:45";
+        LocalTime parsedTime = LocalTime.parse(timeString);
+        System.out.println("Parsed Time: " +timeString);
+
+    //Exercise 12 – Formatted Current Time
+
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String formattedTime = time.format(formatter1);
+        System.out.println(formattedTime);
+
+    //Exercise 13 – Specific LocalDateTime
+
+        LocalDate thisDate = LocalDate.now();
+        LocalTime thisTime = LocalTime.now();
+        LocalDateTime thisDateTime = LocalDateTime.now();
+        System.out.println("Date: " + thisDate+ "," + "Time: " + thisTime);
+
+    //Exercise 14 – Formatted LocalDateTime
+
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("eeee dd MMMM HH:mm");
+        String formattedDateTime = thisDateTime.format(formatter2);
+        System.out.println(formattedDateTime);
+
+    //Exercise 15 – Combine Date and Time
+
+        LocalDateTime combined = LocalDateTime.of(thisDate, thisTime);
+        System.out.println("Combined Date and Time: " + combined);
+
 
 
     }
