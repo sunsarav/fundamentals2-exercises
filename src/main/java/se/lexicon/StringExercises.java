@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class StringExercises {
     static void main() {
 
@@ -64,7 +66,16 @@ public class StringExercises {
         System.out.println(arr[3]);
         System.out.println(arr[4]);
 
+    //Exercise 10 – Convert to Char Array
 
+        String convert = "ThisShouldBeConverted";
+        char[] array1 = convert.toCharArray();
+        System.out.println(Arrays.toString(array1));
 
+    //Exercise 11 – Convert Char Array to String
+
+        char[] inp = {'J','a','v','a'};
+        String out = new String(inp);
+        System.out.println(out);
     }
 }
